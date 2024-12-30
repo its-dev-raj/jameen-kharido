@@ -1,22 +1,32 @@
-import React from 'react'
-import Navbar from './pages/Navbar'
-import Bottombar from './pages/Bottombar'
-import Searchbar from './pages/Searchbar'
-import Footer from './pages/Footer'
-import Banner from './pages/Banner'
-import Destination from './pages/Destination'
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Footer from "./pages/components/Footer";
+import Home from "./pages/HOME/Home";
+import NotFound from "./pages/components/NotFound";
+import Ads from "./pages/ADS/Ads";
 
 const App = () => {
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Home />,
+    },
+    {
+      path: "/ads",
+      element: <Ads />,
+    },
+
+    {
+      path: "*",
+      element: <NotFound />,
+    },
+  ]);
   return (
     <div>
-      <Navbar/>
-      <Bottombar/>
-      <Searchbar/>
-      <Banner/>
-      <Destination/>
-      <Footer/>
-    </div>
-  )
-}
+      <RouterProvider router={router} />
 
-export default App
+      <Footer />
+    </div>
+  );
+};
+
+export default App;

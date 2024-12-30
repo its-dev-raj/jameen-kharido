@@ -48,7 +48,7 @@ const Navbar = () => {
               </div>
             </div>
           ))}
-          <div className="flex  items-center gap-1  border-r-2  px-4">
+          <div className="flex cursol-pointer items-center gap-1  border-r-2  px-4">
             <Globe className="stroke-1 " />
             <p className="font-semibold">English</p>
           </div>
