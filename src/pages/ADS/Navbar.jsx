@@ -13,7 +13,7 @@ const Navbar = () => {
           <div className="flex justify-start border cursor-pointer rounded-md ">
             <input
               className="p-2 w-[300px]  rounded-l-md border-r-2 "
-              placeholder="Banglore"
+              placeholder = "Koramangala"
               type="text"
             />
             <p className="p-2 border-r-2 justify-start  bg-white px-8 text-black">
@@ -42,7 +42,7 @@ const Navbar = () => {
         </div>
         <div className="flex items-center px-4  gap-2">
           <CircleUser className="stroke-[1.5]" />
-          <p className="font-semibold">Login / Signup</p>
+          <p className="font-semibold text-[#585858]">Login / Signup</p>
         </div>
       </div>
     </div>
