@@ -1,0 +1,16 @@
+/* For the entire scrollbar */
+
+html::-webkit-scrollbar{
+  display: none;
+}
+.scr::-webkit-scrollbar {
+  background-color: transparent;
+  width: 8px;
+  height: 4px;
+}
+/* For the thumb (the draggable part) */
+.scr::-webkit-scrollbar-thumb {
+  background: #aaa9a9; /* Darker color for the thumb */
+  border-radius: 4px;
+  height: 4px;
+}
