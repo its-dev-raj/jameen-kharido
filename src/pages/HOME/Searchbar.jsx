@@ -13,10 +13,10 @@ const Searchbar = () => {
             placeholder="Banglore"
             type="text"
           />
-          <p className="p-4 border-r-2 border-gray-500 bg-white px-8 text-black">
+          <p className="p-4 border-r-2 font-semibold text-md  border-gray-500 bg-white pr-24 text-black">
             Thu, 26 Dec - Fri, 27 Dec
           </p>
-          <p className="p-4 border-r-2 text-lg  font-semibold border-gray-500 px-8 bg-white text-black">
+          <p className="p-4 border-r-2 text-lg font-semibold border-gray-500 pr-24 bg-white text-black">
             1 Room, 1 Guest
           </p>
           <p className="p-4 rounded-r-md bg-[#128036] text-[#FFFFFF] text-xl font-bold  px-12">

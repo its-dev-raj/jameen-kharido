@@ -2,7 +2,7 @@ import React from "react";
 import logo from "/image/oyo-logo1.png";
 import internet from "/image/internet.png";
 import login from "/image/login.png";
-import { Activity, CircleUser, Globe } from "lucide-react";
+import { Activity, BriefcaseBusiness, Building2, CircleUser, Globe, Phone } from "lucide-react";
 const Navbar = () => {
   const NavbarData = [
     {
@@ -13,16 +13,16 @@ const Navbar = () => {
     {
       title: "OYO for Business",
       subheading: "Trusted by 5000 Corporates",
-      icon: Activity,
+      icon: BriefcaseBusiness,
     },
     {
       title: "List your property",
       subheading: "Start earning in 30 mins",
-      icon: Activity,
+      icon: Building2,
     },
     {
       title: "0124-6201611",
-      icon: Activity,
+      icon: Phone ,
 
       subheading: "Call us to Book now",
     },
@@ -42,7 +42,7 @@ const Navbar = () => {
               </div>
               <div className="flex flex-col justify-center px-2  ">
                 <p className="font-semibold text-md">{item.title}</p>
-                <p className="text-sm font-normal text-gray-500">
+                <p className="text-xs font-normal text-gray-500">
                   {item.subheading}
                 </p>
               </div>
@@ -50,11 +50,11 @@ const Navbar = () => {
           ))}
           <div className="flex cursol-pointer items-center gap-1  border-r-2  px-4">
             <Globe className="stroke-1 " />
-            <p className="font-semibold">English</p>
+            <p className="font-bold">English</p>
           </div>
           <div className="flex items-center px-4 gap-2">
             <CircleUser className="stroke-[1.5]" />
-            <p className="font-semibold">Login / Signup</p>
+            <p className="font-bold">Login / Signup</p>
           </div>
         </div>
       </div>
