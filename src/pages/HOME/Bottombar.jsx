@@ -2,6 +2,7 @@ import { ChevronDown } from "lucide-react";
 import React, { useState } from "react";
 import { HiOutlineMenuAlt4 } from "react-icons/hi";
 import { IoClose } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 const Bottombar = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -98,7 +99,13 @@ const Bottombar = () => {
                 }  flex items-start absolute justify-center flex-col  gap-5 overflow-hidden min-w-[300px] duration-500 border top-12 left-0 bg-white text-black`}
               >
                 {item.areas.map(
-                  (item, idx) => idx < 11 && <span> {item}</span>
+                  (item, idx) =>
+                    idx < 11 && (
+                      <span className=" hover:text-red-700">
+                        {" "}
+                        <Link to="/ads">{item}</Link>
+                      </span>
+                    )
                 )}
               </div>
             }
