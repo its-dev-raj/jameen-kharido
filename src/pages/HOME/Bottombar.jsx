@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const Bottombar = () => {
   const [isHovered, setIsHovered] = useState(false);
   return (
-    <div className="h-12 bg-slate-300 px-20">
+    <div className="h-10 bg-slate-300 px-20">
       <div className="flex items-center justify-center gap-12 h-full">
         {[
           {
@@ -79,7 +79,7 @@ const Bottombar = () => {
           },
         ]?.map((item, idx) => (
           <div
-            className={`flex gap-0 relative  p-3 px-5 group items-center justify-center ${
+            className={`flex gap-0 relative  p-2 px-5 group items-center justify-center ${
               isHovered == item.cityName && " bg-gray-400 "
             } `}
             onMouseEnter={() => setIsHovered(item.cityName)}

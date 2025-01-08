@@ -17,12 +17,12 @@ const Navbar = () => {
               type="text"
             />
             <p className="p-2 border-r-2 justify-start  text-base font-semibold bg-white px-8 text-black">
-              Thu, 31 Dec - Wed, 1 
+              Thu, 31 Dec - Wed, 1
             </p>
             <p className="p-2  text-base  font-semibold border-gray-500 px-8 bg-white text-black">
               1 Room, 1 Guest
             </p>
-            <p className="p-3    rounded-r-md bg-[#1AB64F] text-[#FFFFFF] text-base font-bold  px-12">
+            <p className="p-3    rounded-r-md bg-[#1AB64F] hover:bg-[#128036] text-[#FFFFFF] text-base font-bold  px-12">
               Search
             </p>
           </div>

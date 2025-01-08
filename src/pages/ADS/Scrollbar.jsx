@@ -205,7 +205,7 @@ const Scrollbar = () => {
           </div>
         </div>
       </div>
-      <div className="right w-[75%] px-8 relative overflow-y-scroll ">
+      <div className="right w-[75%] px-8 relative  overflow-y-scroll ">
         <div className="flex flex-col   py-4 border-b ">
           <div>
             <p className="text-xs text-blue-400">
@@ -249,173 +249,192 @@ const Scrollbar = () => {
             </div>
           </div>
         </div>
-        <div className={` ${!view ? "w-full" : "w-2/4 "} `}>
-          {[1, 2, 3, 4, 5, 6].map((item, idx) => (
-            <div className="flex flex-col">
-              <div className="flex rounded items-center text-xs px-2 py-1 gap-1  bg-white absolute top-[155px] left-[40px]">
-                <User className="size-4" />
-                <div className="flex">
-                  <p className="font-medium">Company-</p>
-                  <p className="text-black font-bold">Serviced</p>
-                </div>
-              </div>
 
-              <div className="flex w-full gap-4 cursor-pointer select-none  py-12">
-                <div className="w-[800px] flex  ">
-                  {!view ? (
-                    <div className="relative text-white group ">
-                      <div className="hidden group-hover:block  bg-[rgb(0,0,0,0.32)] absolute rounded-full  left-4 top-28 p-4">
-                        <ChevronLeft
-                          size={20}
-                          onClick={() =>
-                            imageData.length > index &&
-                            index > 0 &&
-                            setIndex(index - 1)
-                          }
-                        />
-                      </div>
-
-                      <img src={imageData[index]} className="duration-700 " />
-                      <div className="  hidden group-hover:block bg-[rgb(0,0,0,0.32)] absolute rounded-full  right-4 top-28 p-4">
-                        <ChevronRight
-                          size={20}
-                          className=" "
-                          onClick={() =>
-                            imageData.length - 1 > index && setIndex(index + 1)
-                          }
-                        />
-                      </div>
-
-                      {/* {imageData
-                    .filter((item, idx) => idx == slid)
-                    .map((item, idx) => (
-                      <img className=" " src={item} alt="room" />
-                    ))} */}
-                    </div>
-                  ) : (
-                    <div className="relative text-white group w-[250px]">
-                      <div className="hidden group-hover:block  bg-[rgb(0,0,0,0.32)] absolute rounded-full  left-4 top-20 p-4">
-                        <ChevronLeft
-                          size={20}
-                          onClick={() =>
-                            imageData.length > index &&
-                            index > 0 &&
-                            setIndex(index - 1)
-                          }
-                        />
-                      </div>
-
-                      <img src={imageData[index]} className="duration-700 " />
-                      <div className="  hidden group-hover:block bg-[rgb(0,0,0,0.32)] absolute rounded-full  right-4 top-20 p-4">
-                        <ChevronRight
-                          size={20}
-                          className=" "
-                          onClick={() =>
-                            imageData.length - 1 > index && setIndex(index + 1)
-                          }
-                        />
-                      </div>
-
-                      {/* {imageData
-                    .filter((item, idx) => idx == slid)
-                    .map((item, idx) => (
-                      <img className=" " src={item} alt="room" />
-                    ))} */}
-                    </div>
-                  )}
-                  {!view ? (
-                    <div className="flex flex-col w-1/5  ">
-                      {imageData.map((item, idx) => (
-                        <img
-                          className=" h-1/4  mx-1 pb-1"
-                          src={item}
-                          alt="room"
-                          onClick={() => setIndex(idx)}
-                        />
-                      ))}
-                    </div>
-                  ) : (
-                    " "
-                  )}
-                </div>
-                <div className="flex flex-col gap-12  w-full relative ">
-                  <div>
-                    <p className="text-xl font-bold">
-                      Super Hotel O Koramangala Near Sony Signal
-                    </p>
-                    <p>Near Eat Street, Kormangala, Bangalore · 1.4 km</p>
+        <div className="flex h-[600px]">
+          <div className={` ${!view ? "w-full" : "w-2/4 overflow-y-scroll"} `}>
+            {[1, 2, 3, 4, 5, 6].map((item, idx) => (
+              <div className="flex flex-col relative">
+                <div className="flex rounded items-center text-xs px-2 py-1 gap-1  bg-white absolute top-14 left-2 z-10">
+                  <User className="size-4" />
+                  <div className="flex">
+                    <p className="font-medium">Company-</p>
+                    <p className="text-black font-bold">Serviced</p>
                   </div>
-                  <div className="flex flex-col gap-2">
-                    <div className="flex gap-4 items-center">
-                      <button className="bg-green-700 px-2 rounded text-white font-semibold">
-                        4.1 *
-                      </button>
-                      <p className="text-xs ">(864 Ratings) . Very Good</p>
-                    </div>
+                </div>
+
+                <div className="flex w-full gap-4 cursor-pointer select-none  py-12">
+                  <div className="w-[800px] flex  ">
                     {!view ? (
-                      <div className="flex gap-6 text-sm">
-                        <div className="flex gap-1">
-                          <CheckCheck className="rounded" />
-                          <p>Reception</p>
+                      <div className="relative text-white group ">
+                        <div className="hidden group-hover:block  bg-[rgb(0,0,0,0.32)] absolute rounded-full  left-4 top-28 p-4">
+                          <ChevronLeft
+                            size={20}
+                            onClick={() =>
+                              imageData.length > index &&
+                              index > 0 &&
+                              setIndex(index - 1)
+                            }
+                          />
                         </div>
-                        <div className="flex gap-1">
-                          <Wifi className=" " />
-                          <p>Free Wifi</p>
+
+                        <img src={imageData[index]} className="duration-700 " />
+                        <div className="  hidden group-hover:block bg-[rgb(0,0,0,0.32)] absolute rounded-full  right-4 top-28 p-4">
+                          <ChevronRight
+                            size={20}
+                            className=" "
+                            onClick={() =>
+                              imageData.length - 1 > index &&
+                              setIndex(index + 1)
+                            }
+                          />
                         </div>
-                        <div className="flex gap-1">
-                          <BatteryCharging className="" />
-                          <p>Power backup</p>
+
+                        {/* {imageData
+                    .filter((item, idx) => idx == slid)
+                    .map((item, idx) => (
+                      <img className=" " src={item} alt="room" />
+                    ))} */}
+                      </div>
+                    ) : (
+                      <div className="relative text-white group w-[250px]">
+                        <div className="hidden group-hover:block  bg-[rgb(0,0,0,0.32)] absolute rounded-full  left-4 top-20 p-4">
+                          <ChevronLeft
+                            size={20}
+                            onClick={() =>
+                              imageData.length > index &&
+                              index > 0 &&
+                              setIndex(index - 1)
+                            }
+                          />
+                        </div>
+
+                        <img src={imageData[index]} className="duration-700 " />
+                        <div className="  hidden group-hover:block bg-[rgb(0,0,0,0.32)] absolute rounded-full  right-4 top-20 p-4">
+                          <ChevronRight
+                            size={20}
+                            className=" "
+                            onClick={() =>
+                              imageData.length - 1 > index &&
+                              setIndex(index + 1)
+                            }
+                          />
+                        </div>
+
+                        {/* {imageData
+                    .filter((item, idx) => idx == slid)
+                    .map((item, idx) => (
+                      <img className=" " src={item} alt="room" />
+                    ))} */}
+                      </div>
+                    )}
+                    {!view ? (
+                      <div className="flex flex-col w-1/5  ">
+                        {imageData.map((item, idx) => (
+                          <img
+                            className=" h-1/4  mx-1 pb-1"
+                            src={item}
+                            alt="room"
+                            onClick={() => setIndex(idx)}
+                          />
+                        ))}
+                      </div>
+                    ) : (
+                      " "
+                    )}
+                  </div>
+                  <div className="flex flex-col gap-12  w-full relative ">
+                    <div>
+                      <p className="text-xl font-bold">
+                        Super Hotel O Koramangala Near Sony Signal
+                      </p>
+                      <p>Near Eat Street, Kormangala, Bangalore · 1.4 km</p>
+                    </div>
+                    <div className="flex flex-col gap-2">
+                      <div className="flex gap-4 items-center">
+                        <button className="bg-green-700 px-2 rounded text-white font-semibold">
+                          4.1 *
+                        </button>
+                        <p className="text-xs ">(864 Ratings) . Very Good</p>
+                      </div>
+                      {!view ? (
+                        <div className="flex gap-6 text-sm">
+                          <div className="flex gap-1">
+                            <CheckCheck className="rounded" />
+                            <p>Reception</p>
+                          </div>
+                          <div className="flex gap-1">
+                            <Wifi className=" " />
+                            <p>Free Wifi</p>
+                          </div>
+                          <div className="flex gap-1">
+                            <BatteryCharging className="" />
+                            <p>Power backup</p>
+                          </div>
+                          <div>
+                            <p>+ 13 more</p>
+                          </div>
+                        </div>
+                      ) : (
+                        " "
+                      )}
+                    </div>
+                    <div className="flex  justify-between">
+                      <div className="flex flex-col ">
+                        <div className="flex items-center gap-2">
+                          <p className="text-2xl font-bold text-black"> ₹782</p>
+                          <p className="text-gray-500"> ₹3497</p>
+                          <p className="text-sm text-orange-400 font-medium">
+                            72% off
+                          </p>
                         </div>
                         <div>
-                          <p>+ 13 more</p>
+                          <p className="text-xs text-gray-500">
+                            + ₹185 taxes & fees · per room per night
+                          </p>
                         </div>
                       </div>
-                    ) : (
-                      " "
-                    )}
-                  </div>
-                  <div className="flex  justify-between">
-                    <div className="flex flex-col ">
-                      <div className="flex items-center gap-2">
-                        <p className="text-2xl font-bold text-black"> ₹782</p>
-                        <p className="text-gray-500"> ₹3497</p>
-                        <p className="text-sm text-orange-400 font-medium">
-                          72% off
-                        </p>
-                      </div>
-                      <div>
-                        <p className="text-xs text-gray-500">
-                          + ₹185 taxes & fees · per room per night
-                        </p>
-                      </div>
+                      {!view ? (
+                        <div className="flex gap-4 items-center ">
+                          <p className="text-black font-bold border border-black px-5 py-2 ">
+                            View Details
+                          </p>
+                          <p className="text-white font-bold text-base px-5 bg-[#1AB64F] py-2">
+                            Book Now
+                          </p>
+                        </div>
+                      ) : (
+                        " "
+                      )}
                     </div>
-                    {!view ? (
-                      <div className="flex gap-4 items-center ">
-                        <p className="text-black font-bold border border-black px-5 py-2 ">
-                          View Details
-                        </p>
-                        <p className="text-white font-bold text-base px-5 bg-[#1AB64F] py-2">
-                          Book Now
-                        </p>
-                      </div>
-                    ) : (
-                      " "
-                    )}
                   </div>
+                  {!view ? (
+                    <div className="flex gap-1 w-[130px] absolute text-red-500 text-xs font-medium  right-4">
+                      <Flame className="pt-0 h-4 size-10 " />
+                      <p>11 people booked this hotel in last 6 hours</p>
+                    </div>
+                  ) : (
+                    ""
+                  )}
                 </div>
-                {!view ? (
-                  <div className="flex gap-1 w-[130px] absolute text-red-500 text-xs font-medium  right-4">
-                    <Flame className="pt-0 h-4 size-10 " />
-                    <p>11 people booked this hotel in last 6 hours</p>
-                  </div>
-                ) : (
-                  ""
-                )}
               </div>
+            ))}
+          </div>
+
+          {view && (
+            <div className="flex justify-center items-start p-4">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119027.77494938963!2d81.36441085940227!3d21.207330066644978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a29216d6fed47e7%3A0x4f4f4d0a88e9ea85!2sCharoda%2C%20Chhattisgarh!5e0!3m2!1sen!2sin!4v1736157589283!5m2!1sen!2sin"
+                width="540"
+                height="600"
+                style={{ border: "0" }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="border rounded shadow-lg"
+              ></iframe>
             </div>
-          ))}
+          )}
         </div>
-        <div></div>
       </div>
     </div>
   );
