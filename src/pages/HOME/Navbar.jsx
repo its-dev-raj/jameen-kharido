@@ -10,6 +10,7 @@ import {
   Globe,
   Phone,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 const Navbar = () => {
   const NavbarData = [
     {
@@ -40,7 +41,7 @@ const Navbar = () => {
         <div className="content-center ">
           <img className=" w-24 " src={logo} alt="oyo-icon" />
         </div>
-
+        <Link to={"/exp"}>Go to Exp</Link>
         <div className="flex  items-center   justify-center">
           {NavbarData.map((item, idx) => (
             <div className="flex px-6 justify-center  cursor-pointer h-[70px]  border-r  ">

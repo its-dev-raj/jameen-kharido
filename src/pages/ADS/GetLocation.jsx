@@ -1,50 +1,51 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const GetLocation = () => {
-  const [location, setLocation] = useState({ latitude: null, longitude: null });
-  const [error, setError] = useState("");
+  // Initialize state to hold latitude and longitude
+  const [latitude, setLatitude] = useState(null);
+  const [longitude, setLongitude] = useState(null);
+  const [error, setError] = useState(null);
 
+  // Function to fetch the user's current location
   const getLocation = () => {
-    if ("geolocation" in navigator) {
+    if (navigator.geolocation) {
+      // Requesting current position
       navigator.geolocation.getCurrentPosition(
         (position) => {
-          const { latitude, longitude } = position.coords;
-          setLocation({ latitude, longitude });
-          setError(""); // Clear previous errors
+          // Update state with latitude and longitude
+          setLatitude(position.coords.latitude);
+          setLongitude(position.coords.longitude);
         },
         (err) => {
-          setError(err.message || "Unable to retrieve location.");
+          // Handle error
+          setError("Error fetching location: " + err.message);
         }
       );
     } else {
-      setError("Geolocation is not supported by your browser.");
+      setError("Geolocation is not supported by this browser.");
     }
   };
 
-  return (
-    <div className="p-4">
-      <h2 className="text-lg font-semibold mb-4">Get Your Location</h2>
-      <button
-        onClick={getLocation}
-        className="px-4 py-2 bg-blue-600 text-white rounded shadow hover:bg-blue-700 transition"
-      >
-        Get Location
-      </button>
+  useEffect(() => {
+    // Call getLocation function when component is mounted
+    getLocation();
+  }, []); // Empty dependency array ensures this runs once when the component mounts
 
-      {location.latitude && location.longitude && (
-        <div className="mt-4">
-          <p className="text-sm text-gray-700">
-            <strong>Latitude:</strong> {location.latitude}
-          </p>
-          <p className="text-sm text-gray-700">
-            <strong>Longitude:</strong> {location.longitude}
-          </p>
+  return (
+    <div>
+      <h1>Get Latitude and Longitude</h1>
+      {error && <p style={{ color: "red" }}>{error}</p>}
+      {!latitude && !longitude && !error && <p>Loading location...</p>}
+      {latitude && longitude && (
+        <div>
+          <p>Latitude: {latitude}</p>
+          <p>Longitude: {longitude}</p>
         </div>
       )}
-
-      {error && <p className="text-sm text-red-600 mt-4">{error}</p>}
     </div>
   );
+
+return {latitude,longitude}
 };
 
 export default GetLocation;

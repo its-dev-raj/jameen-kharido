@@ -14,8 +14,34 @@ import {
 import React, { useEffect, useState } from "react";
 import room from "/image/room.jpg";
 import room1 from "/image/room1.avif";
+import GetLocation from "./GetLocation";
 
 const Scrollbar = () => {
+  const [location, setlocation] = useState({ latitude: "", longitude: "" });
+  const getLocation = () => {
+    if (navigator.geolocation) {
+      // Requesting current position
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          // Update state with latitude and longitude
+
+          setlocation({ ...location, latitude: position.coords.latitude });
+          setlocation({ ...location, longitude: position.coords.longitude });
+        },
+        (err) => {
+          // Handle error
+          setError("Error fetching location: " + err.message);
+        }
+      );
+    } else {
+      setError("Geolocation is not supported by this browser.");
+    }
+  };
+
+  useEffect(() => {
+    // Call getLocation function when component is mounted
+    getLocation();
+  }, []);
   const checkboxData = [
     {
       checked: false,
@@ -361,7 +387,7 @@ const Scrollbar = () => {
                           <div className="flex gap-1">
                             <CheckCheck className="rounded" />
                             <p>Reception</p>
-                          </div>
+         =                 </div>
                           <div className="flex gap-1">
                             <Wifi className=" " />
                             <p>Free Wifi</p>
@@ -422,8 +448,8 @@ const Scrollbar = () => {
 
           {view && (
             <div className="flex justify-center items-start p-4">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119027.77494938963!2d81.36441085940227!3d21.207330066644978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a29216d6fed47e7%3A0x4f4f4d0a88e9ea85!2sCharoda%2C%20Chhattisgarh!5e0!3m2!1sen!2sin!4v1736157589283!5m2!1sen!2sin"
+              {/* <iframe
+                src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119027.77494938963!2d${location?.longitude}!3d${location?.latitude}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a29216d6fed47e7%3A0x4f4f4d0a88e9ea85!2sCharoda%2C%20Chhattisgarh!5e0!3m2!1sen!2sin!4v1736157589283!5m2!1sen!2sin`}
                 width="540"
                 height="600"
                 style={{ border: "0" }}
@@ -431,6 +457,16 @@ const Scrollbar = () => {
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 className="border rounded shadow-lg"
+              ></iframe> */}
+
+              <iframe
+                src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119027.77494938963!2d${location.longitude}!3d${location.latitude}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a29216d6fed47e7%3A0x4f4f4d0a88e9ea85!2sCharoda%2C%20Chhattisgarh!5e0!3m2!1sen!2sin!4v1736157589283!5m2!1sen!2sin`}
+                width="600"
+                height="450"
+                style={{ border: "0" }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
             </div>
           )}
