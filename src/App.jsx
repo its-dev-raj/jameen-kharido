@@ -5,53 +5,9 @@ import NotFound from "./pages/components/NotFound";
 import Ads from "./pages/ADS/Ads";
 import "./App.css";
 import Experiment from "./pages/Experiment/Experiment";
-// import { useEffect } from "react";
-
-// function getUserLocation() {
-//   // Check if the browser supports Geolocation API
-//   if (navigator.geolocation) {
-//     // Use getCurrentPosition to retrieve the user's location
-//     navigator.geolocation.getCurrentPosition(
-//       (position) => {
-//         // Success callback
-//         const latitude = position.coords.latitude;
-//         const longitude = position.coords.longitude;
-
-//         console.log(`Latitude: ${latitude}`);
-//         console.log(`Longitude: ${longitude}`);
-
-//         // You can use these coordinates (latitude, longitude) as needed
-//         alert(`Your location: Latitude ${latitude}, Longitude ${longitude}`);
-//       },
-//       (error) => {
-//         // Error callback
-//         switch (error.code) {
-//           case error.PERMISSION_DENIED:
-//             alert("User denied the request for Geolocation.");
-//             break;
-//           case error.POSITION_UNAVAILABLE:
-//             alert("Location information is unavailable.");
-//             break;
-//           case error.TIMEOUT:
-//             alert("The request to get user location timed out.");
-//             break;
-//           case error.UNKNOWN_ERROR:
-//             alert("An unknown error occurred.");
-//             break;
-//         }
-//       }
-//     );
-//   } else {
-//     // Browser doesn't support Geolocation API
-//     alert("Geolocation is not supported by this browser.");
-//   }
-// }
+import ViewDetails from "./pages/ADS/ViewDetails";
 
 const App = () => {
-  // useEffect(() => {
-  //   getUserLocation();
-  // }, []);
-
   const router = createBrowserRouter([
     {
       path: "/",
@@ -64,6 +20,10 @@ const App = () => {
     {
       path: "/ads",
       element: <Ads />,
+    },
+    {
+      path: "/ViewDtail",
+      element: <ViewDetails />,
     },
 
     {

@@ -15,6 +15,7 @@ import React, { useEffect, useState } from "react";
 import room from "/image/room.jpg";
 import room1 from "/image/room1.avif";
 import GetLocation from "./GetLocation";
+import { Link } from "react-router-dom";
 
 const Scrollbar = () => {
   const [location, setlocation] = useState({ latitude: "", longitude: "" });
@@ -142,7 +143,7 @@ const Scrollbar = () => {
   const [slid, setslid] = useState(0);
 
   return (
-    <div className="w-full flex h-screen ">
+    <div className="w-full flex   h-screen ">
       <div className="left w-[25%] px-8 overflow-y-scroll border-r scr">
         <div className="flex justify-between items-center  pt-10">
           <div className="flex flex-col  ">
@@ -386,8 +387,8 @@ const Scrollbar = () => {
                         <div className="flex gap-6 text-sm">
                           <div className="flex gap-1">
                             <CheckCheck className="rounded" />
-                            <p>Reception</p>
-         =                 </div>
+                            <p>Reception</p>={" "}
+                          </div>
                           <div className="flex gap-1">
                             <Wifi className=" " />
                             <p>Free Wifi</p>
@@ -421,9 +422,11 @@ const Scrollbar = () => {
                       </div>
                       {!view ? (
                         <div className="flex gap-4 items-center ">
-                          <p className="text-black font-bold border border-black px-5 py-2 ">
-                            View Details
-                          </p>
+                          <Link to="/ViewDtail">
+                            <p className="text-black font-bold border border-black px-5 py-2 ">
+                              View Details
+                            </p>
+                          </Link>
                           <p className="text-white font-bold text-base px-5 bg-[#1AB64F] py-2">
                             Book Now
                           </p>
@@ -460,7 +463,7 @@ const Scrollbar = () => {
               ></iframe> */}
 
               <iframe
-                src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119027.77494938963!2d${location.longitude}!3d${location.latitude}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a29216d6fed47e7%3A0x4f4f4d0a88e9ea85!2sCharoda%2C%20Chhattisgarh!5e0!3m2!1sen!2sin!4v1736157589283!5m2!1sen!2sin`}
+                src={`https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d92263.37885920503!2d${location.latitude}!3d${location.longitude}!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1736407815231!5m2!1sen!2sin`}
                 width="600"
                 height="450"
                 style={{ border: "0" }}

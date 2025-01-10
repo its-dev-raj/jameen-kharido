@@ -50,7 +50,7 @@ const Navbar = () => {
               </div>
               <div className="flex flex-col justify-center  ">
                 <p className="font-semibold text-md">{item.title}</p>
-                <p className="text-sm font-normal text-gray-500">
+                <p className="text-xs font-normal text-gray-500">
                   {item.subheading}
                 </p>
               </div>

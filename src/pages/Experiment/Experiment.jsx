@@ -51,13 +51,13 @@ const Experiment = () => {
       {showMap && location.latitude && location.longitude && (
         <div style={{ marginTop: "20px" }}>
           <iframe
-            src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119027.77494938963!2d${location.longitude}!3d${location.latitude}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a29216d6fed47e7%3A0x4f4f4d0a88e9ea85!2sCharoda%2C%20Chhattisgarh!5e0!3m2!1sen!2sin!4v1736157589283!5m2!1sen!2sin`}
+            src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d92263.37885920503!2d81.37969197681558!3d21.204071349245954!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1736407815231!5m2!1sen!2sin"
             width="600"
             height="450"
-            style={{ border: "0" }}
-            allowFullScreen=""
+            style="border:0;"
+            allowfullscreen=""
             loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
+            referrerpolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
       )}
